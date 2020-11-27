@@ -27,8 +27,8 @@ require_once 'include/functions.php';
   <form name = "get_data_form" id = "get_data_form" action = "index.php" method = "post" enctype = "multipart/form-data">
     <div style = "margin-bottom: 5px;">
       <?php echo "Получить данные за период: " ?>
-      C <input type = "date" name = "first_date" id = "first_date" />
-      По <input type = "date" name = "second_date" id = "second_date" />
+      C <input type = "date" name = "first_date_get" id = "first_date_get" />
+      По <input type = "date" name = "second_date_get" id = "second_date_get" />
     </div>
     <input type = "submit" name = "get_data" id = "get_data" value = "Применить" style = "font-size: 1.0em; padding-bottom: 2px;" /> <!-- Кнопка "Применить" -->
   </form>
