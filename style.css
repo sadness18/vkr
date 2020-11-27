@@ -1,0 +1,39 @@
+*
+{
+  background-color: #F5F5F5;
+  font-family: Verdana /*Helvetica*//*Comic Sans MS*/;
+}
+
+.bor
+{
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  float: left;
+  width: 100%;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-bottom: 7px;
+}
+
+.menu
+{
+  float: left;
+  padding: 10px;
+  margin-right: 8px;
+  font-size: 1.1em;
+  color: black;
+}
+.menu:hover
+{
+  background-color: #6495ED;
+}
+
+.menu_in
+{
+  float: left;
+  padding: 10px;
+  margin-right: 8px;
+  font-size: 1.1em;
+  color: black;
+  background-color: #6495ED;
+}
