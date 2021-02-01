@@ -1,35 +1,39 @@
 <?php
-require_once 'include/database.php';
-require_once 'include/functions.php';
+    require_once 'include/database.php';
+    require_once 'include/functions.php';
+
+    if(isset($_POST["add_file"])) // при нажатии кнопки add_file (Применить) вызываем функцию переноса выбранных файлов на сервер
+        $res = get_files_on_server($link);
 ?>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>vkr</title>
-  <meta http-equiv = "Content-Type" content = "text/html; charset = UTF-8" />
-	<link rel = "stylesheet" type = "text/css" href = "style.css" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <title>vkr</title>
 </head>
+
 <body>
-  <div class = "bor"> <!-- block top menu -->
-		<a href = "index.php">
-			<div class = "menu_in">Внести данные</div>
-		</a>
-		<a href = "get_data.php">
-			<div class = "menu">Получить данные</div>
-		</a>
-		<a href = "cor_data.php">
-			<div class = "menu">Изменить данные</div>
-		</a>
-    <a href = "Make_report.php">
-			<div class = "menu">Построить отчёт</div>
-		</a>
-	</div>
-  <form name = "add_data_form" id = "add_data_form" action = "index.php" method = "post" enctype = "multipart/form-data">
-    <div style = "margin-bottom: 5px;">
-      <?php echo "Загрузить файлы (*.xls) (*.xlsx): " ?>
-      <input type = "file" name = "add_file" id = "add_file" style = "font-size: 1.0em;" multiple accept = "application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" /><br /> <!-- Кнопка выбора файла -->
-    </div>
-    <input type = "submit" name = "add_data" id = "add_data" value = "Применить" style = "font-size: 1.0em; padding-bottom: 2px;" /> <!-- Кнопка "Применить" -->
-  </form>
+    <header>
+        <a href="#">Внести данные</a>
+        <a href="#">Получить данные</a>
+        <a href="#">Изменить данные</a>
+        <a href="#">Построить отчет</a>
+    </header>
+    <main>
+        <form action="" name="add_data_form" id="add_data_form" enctype="multipart/form-data" method="post">
+            <input type="file" name="select_file[]" id="select_file" multiple accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+            <br>
+            <input type="submit" , name="add_file" id="add_file" value="Применить">
+        </form>
+        <?php
+            echo("Ячейка массива res: ".trim($res[0][3][2]));
+        ?>
+    </main>
 </body>
+
 </html>
